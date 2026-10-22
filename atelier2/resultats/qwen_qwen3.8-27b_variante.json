@@ -1,0 +1,572 @@
+{
+  "modele": "qwen/qwen3.8-27b",
+  "consigne": "CONSIGNE_EXEMPLES",
+  "rapport": {
+    "etiquette": "qwen/qwen3.8-27b + CONSIGNE_EXEMPLES",
+    "accuracy": 0.958,
+    "macro_f1": 0.956,
+    "invalides": 0.0,
+    "scores_par_classe": {
+      "facturation": {
+        "precision": 0.957,
+        "recall": 1.0,
+        "f1": 0.978,
+        "support": 22
+      },
+      "technique": {
+        "precision": 1.0,
+        "recall": 0.9,
+        "f1": 0.947,
+        "support": 20
+      },
+      "compte": {
+        "precision": 0.941,
+        "recall": 1.0,
+        "f1": 0.97,
+        "support": 16
+      },
+      "commercial": {
+        "precision": 0.929,
+        "recall": 0.929,
+        "f1": 0.929,
+        "support": 14
+      }
+    },
+    "matrice_confusion": {
+      "facturation": {
+        "facturation": 22,
+        "technique": 0,
+        "compte": 0,
+        "commercial": 0,
+        "invalide": 0
+      },
+      "technique": {
+        "facturation": 0,
+        "technique": 18,
+        "compte": 1,
+        "commercial": 1,
+        "invalide": 0
+      },
+      "compte": {
+        "facturation": 0,
+        "technique": 0,
+        "compte": 16,
+        "commercial": 0,
+        "invalide": 0
+      },
+      "commercial": {
+        "facturation": 1,
+        "technique": 0,
+        "compte": 0,
+        "commercial": 13,
+        "invalide": 0
+      }
+    }
+  },
+  "details": [
+    {
+      "id": "T001",
+      "texte": "Je paie pour un service qui ne marche pas depuis mardi.",
+      "vrai": "technique",
+      "predit": "technique",
+      "correct": true
+    },
+    {
+      "id": "T002",
+      "texte": "il me dit que mon mail existe deja alors que je men suis jamais servi",
+      "vrai": "compte",
+      "predit": "compte",
+      "correct": true
+    },
+    {
+      "id": "T003",
+      "texte": "Vous avez mon ancienne adresse, celle de mon ancien logement.",
+      "vrai": "compte",
+      "predit": "compte",
+      "correct": true
+    },
+    {
+      "id": "T004",
+      "texte": "Je paie 40 euros pour un service que j'utilise deux fois par mois.",
+      "vrai": "commercial",
+      "predit": "facturation",
+      "correct": false
+    },
+    {
+      "id": "T005",
+      "texte": "Mon prenom est mal orthographie partout dans mon espace, y compris sur les documents que vous editez.",
+      "vrai": "compte",
+      "predit": "compte",
+      "correct": true
+    },
+    {
+      "id": "T006",
+      "texte": "stop",
+      "vrai": "commercial",
+      "predit": "commercial",
+      "correct": true
+    },
+    {
+      "id": "T007",
+      "texte": "Vous faites quelque chose pour les etudiants ?",
+      "vrai": "commercial",
+      "predit": "commercial",
+      "correct": true
+    },
+    {
+      "id": "T008",
+      "texte": "Je veux resilier car le service est trop souvent en panne.",
+      "vrai": "commercial",
+      "predit": "commercial",
+      "correct": true
+    },
+    {
+      "id": "T009",
+      "texte": "Facture impayee selon vous, mais mon releve bancaire montre bien le debit du 12 mars.",
+      "vrai": "facturation",
+      "predit": "facturation",
+      "correct": true
+    },
+    {
+      "id": "T010",
+      "texte": "Les notifications ne s'affichent plus depuis que j'ai change de telephone.",
+      "vrai": "technique",
+      "predit": "technique",
+      "correct": true
+    },
+    {
+      "id": "T011",
+      "texte": "On m'a appele pour une promotion, je voudrais en savoir plus avant d'accepter.",
+      "vrai": "commercial",
+      "predit": "commercial",
+      "correct": true
+    },
+    {
+      "id": "T012",
+      "texte": "Est-ce que je peux essayer avant de m'engager ?",
+      "vrai": "commercial",
+      "predit": "commercial",
+      "correct": true
+    },
+    {
+      "id": "T013",
+      "texte": "Depuis la mise a jour d'hier, l'application se ferme toute seule au demarrage.",
+      "vrai": "technique",
+      "predit": "technique",
+      "correct": true
+    },
+    {
+      "id": "T014",
+      "texte": "Ma femme doit pouvoir consulter les documents aussi.",
+      "vrai": "compte",
+      "predit": "compte",
+      "correct": true
+    },
+    {
+      "id": "T015",
+      "texte": "Je voudrais que mon fils ait son propre acces sans voir mes documents.",
+      "vrai": "compte",
+      "predit": "compte",
+      "correct": true
+    },
+    {
+      "id": "T016",
+      "texte": "Ma facture de mars est de 89 euros alors que mon forfait est a 39 euros. Pouvez-vous m'expliquer la difference ?",
+      "vrai": "facturation",
+      "predit": "facturation",
+      "correct": true
+    },
+    {
+      "id": "T017",
+      "texte": "Je pars 6 mois a l'etranger.",
+      "vrai": "commercial",
+      "predit": "commercial",
+      "correct": true
+    },
+    {
+      "id": "T018",
+      "texte": "Le systeme me deconnecte automatiquement au bout de deux minutes d'inactivite, c'est ingerable.",
+      "vrai": "technique",
+      "predit": "technique",
+      "correct": true
+    },
+    {
+      "id": "T019",
+      "texte": "Je n'arrive pas a valider le formulaire, il me dit 'champ invalide' sans preciser lequel.",
+      "vrai": "technique",
+      "predit": "technique",
+      "correct": true
+    },
+    {
+      "id": "T020",
+      "texte": "Apres la derniere version, l'affichage est casse sur petit ecran, les boutons se chevauchent.",
+      "vrai": "technique",
+      "predit": "technique",
+      "correct": true
+    },
+    {
+      "id": "T021",
+      "texte": "Bonjour. Suite a la resiliation, il me reste un solde de 23,40 euros. Quand serai-je rembourse ?",
+      "vrai": "facturation",
+      "predit": "facturation",
+      "correct": true
+    },
+    {
+      "id": "T022",
+      "texte": "Je compare vos offres avec celles d'un concurrent, pouvez-vous me faire une proposition ?",
+      "vrai": "commercial",
+      "predit": "commercial",
+      "correct": true
+    },
+    {
+      "id": "T023",
+      "texte": "Le code de verification par SMS n'arrive pas sur mon nouveau numero.",
+      "vrai": "compte",
+      "predit": "compte",
+      "correct": true
+    },
+    {
+      "id": "T024",
+      "texte": "C'est combien que vous m'avez pris en mars exactement",
+      "vrai": "facturation",
+      "predit": "facturation",
+      "correct": true
+    },
+    {
+      "id": "T025",
+      "texte": "La recherche ne renvoie aucun resultat meme pour des mots que je sais presents.",
+      "vrai": "technique",
+      "predit": "technique",
+      "correct": true
+    },
+    {
+      "id": "T026",
+      "texte": "J'ai ete preleve deux fois ce mois-ci pour le meme abonnement. Je demande le remboursement du doublon.",
+      "vrai": "facturation",
+      "predit": "facturation",
+      "correct": true
+    },
+    {
+      "id": "T027",
+      "texte": "L'export CSV genere un fichier vide alors que j'ai bien des donnees affichees.",
+      "vrai": "technique",
+      "predit": "technique",
+      "correct": true
+    },
+    {
+      "id": "T028",
+      "texte": "Mon acces est bloque depuis que j'ai tape trois fois a cote.",
+      "vrai": "compte",
+      "predit": "compte",
+      "correct": true
+    },
+    {
+      "id": "T029",
+      "texte": "Bonjour, suite a mon demenagement j'ai rebranche le materiel comme indique dans la notice, tout est allume, les voyants sont verts, et pourtant rien ne se passe depuis quatre jours.",
+      "vrai": "technique",
+      "predit": "technique",
+      "correct": true
+    },
+    {
+      "id": "T030",
+      "texte": "je narrive plus a rentrer",
+      "vrai": "compte",
+      "predit": "compte",
+      "correct": true
+    },
+    {
+      "id": "T031",
+      "texte": "Je souhaite recevoir un justificatif de paiement pour ma comptabilite, pour la periode janvier a juin.",
+      "vrai": "facturation",
+      "predit": "facturation",
+      "correct": true
+    },
+    {
+      "id": "T032",
+      "texte": "Depuis hier 14h plus rien",
+      "vrai": "technique",
+      "predit": "technique",
+      "correct": true
+    },
+    {
+      "id": "T033",
+      "texte": "Bonjour, j'ai change de numero de telephone le mois dernier suite a un changement d'operateur, et depuis je ne recois plus les codes que vous envoyez.",
+      "vrai": "compte",
+      "predit": "compte",
+      "correct": true
+    },
+    {
+      "id": "T034",
+      "texte": "Vous avez applique l'ancien tarif sur ma facture alors que j'ai change d'offre le mois dernier.",
+      "vrai": "facturation",
+      "predit": "facturation",
+      "correct": true
+    },
+    {
+      "id": "T035",
+      "texte": "Comment on fait pour la double authentification",
+      "vrai": "compte",
+      "predit": "compte",
+      "correct": true
+    },
+    {
+      "id": "T036",
+      "texte": "Le site m'affiche une erreur quand je veux voir le detail du montant, mais ce qui m'interesse c'est de savoir pourquoi c'est 89 euros.",
+      "vrai": "facturation",
+      "predit": "facturation",
+      "correct": true
+    },
+    {
+      "id": "T037",
+      "texte": "Quelqu'un d'autre utilise mes identifiants, j'ai vu des connexions etranges la nuit.",
+      "vrai": "compte",
+      "predit": "compte",
+      "correct": true
+    },
+    {
+      "id": "T038",
+      "texte": "J'ai paye ma facture il y a 5 jours mais elle apparait toujours comme impayee sur mon espace.",
+      "vrai": "facturation",
+      "predit": "facturation",
+      "correct": true
+    },
+    {
+      "id": "T039",
+      "texte": "Impossible de finaliser le reglement, la page se recharge en boucle.",
+      "vrai": "technique",
+      "predit": "technique",
+      "correct": true
+    },
+    {
+      "id": "T040",
+      "texte": "mon voisin paye moins cher que moi pour la meme chose",
+      "vrai": "commercial",
+      "predit": "commercial",
+      "correct": true
+    },
+    {
+      "id": "T041",
+      "texte": "mon espace client saffiche pas",
+      "vrai": "technique",
+      "predit": "technique",
+      "correct": true
+    },
+    {
+      "id": "T042",
+      "texte": "C'est quoi la difference exactement entre vos deux formules",
+      "vrai": "commercial",
+      "predit": "commercial",
+      "correct": true
+    },
+    {
+      "id": "T043",
+      "texte": "Bonjour, nous sommes une association de douze benevoles et nous nous demandions si votre solution etait adaptee a une structure comme la notre, sachant que nous avons peu de moyens.",
+      "vrai": "commercial",
+      "predit": "commercial",
+      "correct": true
+    },
+    {
+      "id": "T044",
+      "texte": "L'application plante quand je telecharge ma facture, mais de toute facon je conteste le montant.",
+      "vrai": "facturation",
+      "predit": "facturation",
+      "correct": true
+    },
+    {
+      "id": "T045",
+      "texte": "J'ai deux comptes crees par erreur avec la meme adresse, peut-on les fusionner ?",
+      "vrai": "compte",
+      "predit": "compte",
+      "correct": true
+    },
+    {
+      "id": "T046",
+      "texte": "ca rame",
+      "vrai": "technique",
+      "predit": "technique",
+      "correct": true
+    },
+    {
+      "id": "T047",
+      "texte": "quand je clique sur valider il redemande le mot de passe en boucle",
+      "vrai": "technique",
+      "predit": "compte",
+      "correct": false
+    },
+    {
+      "id": "T048",
+      "texte": "Supprimez tout",
+      "vrai": "compte",
+      "predit": "compte",
+      "correct": true
+    },
+    {
+      "id": "T049",
+      "texte": "Vous m'avez envoye une relance. Mon compte indique pourtant que tout est regle.",
+      "vrai": "facturation",
+      "predit": "facturation",
+      "correct": true
+    },
+    {
+      "id": "T050",
+      "texte": "Je n'ai jamais demande l'option premium et elle est sur ma note.",
+      "vrai": "facturation",
+      "predit": "facturation",
+      "correct": true
+    },
+    {
+      "id": "T051",
+      "texte": "Vos serveurs sont down ?",
+      "vrai": "technique",
+      "predit": "technique",
+      "correct": true
+    },
+    {
+      "id": "T052",
+      "texte": "Mon compte est bloque apres plusieurs tentatives de connexion, pouvez-vous le debloquer ?",
+      "vrai": "compte",
+      "predit": "compte",
+      "correct": true
+    },
+    {
+      "id": "T053",
+      "texte": "40 euros ??",
+      "vrai": "facturation",
+      "predit": "facturation",
+      "correct": true
+    },
+    {
+      "id": "T054",
+      "texte": "Suite a la panne de trois jours, quelle compensation est prevue sur ma prochaine echeance ?",
+      "vrai": "facturation",
+      "predit": "facturation",
+      "correct": true
+    },
+    {
+      "id": "T055",
+      "texte": "Bonjour, je n'ai pas recu ma facture du mois de fevrier par mail, pouvez-vous me la renvoyer ?",
+      "vrai": "facturation",
+      "predit": "facturation",
+      "correct": true
+    },
+    {
+      "id": "T056",
+      "texte": "combien de temps je suis engage",
+      "vrai": "commercial",
+      "predit": "commercial",
+      "correct": true
+    },
+    {
+      "id": "T057",
+      "texte": "Bonjour, j'espere que vous allez bien. Je me permets de vous ecrire suite a un courrier recu la semaine derniere. Apres verification de mes releves des trois derniers mois, il apparait que la somme debitee ne correspond pas a ce qui figure sur mon contrat.",
+      "vrai": "facturation",
+      "predit": "facturation",
+      "correct": true
+    },
+    {
+      "id": "T058",
+      "texte": "Mon abonnement est a 19,99 et on m'a pris 24,99, je veux comprendre avant de decider si je reste.",
+      "vrai": "facturation",
+      "predit": "facturation",
+      "correct": true
+    },
+    {
+      "id": "T059",
+      "texte": "Je veux arreter a la fin de l'echeance en cours, sans frais.",
+      "vrai": "commercial",
+      "predit": "commercial",
+      "correct": true
+    },
+    {
+      "id": "T060",
+      "texte": "Bonsoir, j'aimerais etaler le paiement de ma facture sur deux mois, est-ce possible ?",
+      "vrai": "facturation",
+      "predit": "facturation",
+      "correct": true
+    },
+    {
+      "id": "T061",
+      "texte": "Le paiement en ligne echoue systematiquement au moment de valider, la page tourne dans le vide.",
+      "vrai": "technique",
+      "predit": "technique",
+      "correct": true
+    },
+    {
+      "id": "T062",
+      "texte": "J'ai suivi toutes vos procedures trois fois, redemarre, reinstalle, change de navigateur. Toujours pareil.",
+      "vrai": "technique",
+      "predit": "technique",
+      "correct": true
+    },
+    {
+      "id": "T063",
+      "texte": "Le lien de reinitialisation arrive bien mais la page qu'il ouvre est blanche.",
+      "vrai": "technique",
+      "predit": "technique",
+      "correct": true
+    },
+    {
+      "id": "T064",
+      "texte": "jai changé doffre le 3 et on ma quand meme pris lancien prix",
+      "vrai": "facturation",
+      "predit": "facturation",
+      "correct": true
+    },
+    {
+      "id": "T065",
+      "texte": "Apres la panne de la semaine derniere, je pense partir chez un concurrent.",
+      "vrai": "commercial",
+      "predit": "commercial",
+      "correct": true
+    },
+    {
+      "id": "T066",
+      "texte": "On m'a promis un geste commercial de 15 euros le mois dernier, je ne le vois nulle part.",
+      "vrai": "facturation",
+      "predit": "facturation",
+      "correct": true
+    },
+    {
+      "id": "T067",
+      "texte": "La qualite est pire depuis que je suis passe a l'offre superieure.",
+      "vrai": "technique",
+      "predit": "commercial",
+      "correct": false
+    },
+    {
+      "id": "T068",
+      "texte": "Comment modifier mon adresse postale dans mon espace client ?",
+      "vrai": "compte",
+      "predit": "compte",
+      "correct": true
+    },
+    {
+      "id": "T069",
+      "texte": "RGPD : je demande l'ensemble des informations me concernant.",
+      "vrai": "compte",
+      "predit": "compte",
+      "correct": true
+    },
+    {
+      "id": "T070",
+      "texte": "Vous m'avez facture des frais de retard alors que le prelevement a echoue de votre cote.",
+      "vrai": "facturation",
+      "predit": "facturation",
+      "correct": true
+    },
+    {
+      "id": "T071",
+      "texte": "remboursement",
+      "vrai": "facturation",
+      "predit": "facturation",
+      "correct": true
+    },
+    {
+      "id": "T072",
+      "texte": "Le fichier que je telecharge fait 0 octet.",
+      "vrai": "technique",
+      "predit": "technique",
+      "correct": true
+    }
+  ]
+}

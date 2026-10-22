@@ -1,0 +1,32 @@
+{
+  "classement": [
+    {
+      "modele": "qwen/qwen3.8-27b",
+      "consigne": "CONSIGNE_EXEMPLES",
+      "accuracy": 0.958,
+      "macro_f1": 0.956,
+      "invalides": 0.0
+    },
+    {
+      "modele": "qwen/qwen3.8-27b",
+      "consigne": "CONSIGNE",
+      "accuracy": 0.944,
+      "macro_f1": 0.943,
+      "invalides": 0.0
+    },
+    {
+      "modele": "openai/gpt-oss-120b",
+      "consigne": "CONSIGNE",
+      "accuracy": 0.056,
+      "macro_f1": 0.095,
+      "invalides": 0.944
+    },
+    {
+      "modele": "openai/gpt-oss-20b",
+      "consigne": "CONSIGNE",
+      "accuracy": 0.014,
+      "macro_f1": 0.022,
+      "invalides": 0.986
+    }
+  ]
+}
